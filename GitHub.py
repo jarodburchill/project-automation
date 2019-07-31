@@ -1,8 +1,20 @@
 import sys
+import getpass
 from github import Github
 
-username = sys.argv[1]
-password = sys.argv[2]
+repoName = input("Enter new GitHub repository name: ")
+username = input("Enter your GitHub username: ")
+password = getpass.getpass("Enter your GitHub password: ")
 
-user = Github(username, password).get_user()
-user.create_repo(sys.argv[3])
+valid = False
+
+while valid == False:
+    try:
+        user = Github(username, password).get_user()
+        user.create_repo(repoName)
+        valid = True
+    except Exception as e:
+        print(e)
+        repoName = input("Enter new GitHub repository name: ")
+        username = input("Enter your GitHub username: ")
+        password = getpass.getpass("Enter your GitHub password: ")
