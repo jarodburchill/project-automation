@@ -1,7 +1,14 @@
 import sys
+import subprocess
 import getpass
 from git import Repo
 from github import Github
+
+subprocess.run("pip install -r Requirements.txt", shell=True)
+
+# global project variables
+localPath = "L:/Projects/"
+projectName = input("Project name: ")
 
 
 # global GitHub credentials
@@ -33,8 +40,21 @@ while valid == False:  # creates repo if credentials are valid, requests user to
         get_credentials()
 
 
+subprocess.run(f"cd /D {localPath}", shell=True)
+#subprocess.run(f"npx create-react-app {projectName}", shell=True)
+subprocess.run(f"mkdir {projectName}", shell=True)
+subprocess.run(f"cd {projectName}", shell=True)
+subprocess.run("git init", shell=True)
+
+
 # sets local repo remote origin to the GitHub repo URL
-path = sys.argv[1]
-projectName = sys.argv[2]
-repo = Repo(path + projectName)
-repo.create_remote('origin', url=f"https://github.com/{username}/{repoName}")
+# repo = Repo(localPath + projectName)
+# repo.create_remote('origin', url=f"https://github.com/{username}/{repoName}")
+
+
+subprocess.run("git add *", shell=True)
+subprocess.run("git commit - m 'initial commit'", shell=True)
+subprocess.run(
+    f"git add remote origin https://github.com/{username}/{repoName}",
+    shell=True)
+subprocess.run("git push origin master", shell=True)
