@@ -3,14 +3,17 @@ function New-React {
     [string]$projectName
   )
 
-  Set-Location -Path L:\Projects
+  $path = "L:/Projects/"
+  Set-Location -Path $path
   npx create-react-app $projectName
   Set-Location $projectName
+  git init
 
   pip install -r $PSScriptRoot\Requirements.txt
-  python $PSScriptRoot\GitHub.py    
+  python $PSScriptRoot\GitHub.py $path $projectName    
 
-  git remote add origin https://github.com/$username/$repoName
+  git add *
+  git commit -m "initial commit"
   git push origin master
 
   code .
