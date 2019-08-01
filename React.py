@@ -4,7 +4,7 @@ import subprocess
 import getpass
 from github import Github
 
-subprocess.run("pip install -r Requirements.txt", shell=True)
+subprocess.run("pip install PyGithub", shell=True)
 
 # global project variables
 localPath = "L:/Projects/"
