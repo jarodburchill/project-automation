@@ -2,10 +2,21 @@ import sys
 import getpass
 from github import Github
 
-repoName = input("Enter new GitHub repository name: ")
-username = input("Enter your GitHub username: ")
-password = getpass.getpass("Enter your GitHub password: ")
+repoName = ""
+username = ""
+password = ""
 
+
+def get_credentials():
+    global repoName
+    global username
+    global password
+    repoName = input("Enter new GitHub repository name: ")
+    username = input("Enter your GitHub username: ")
+    password = getpass.getpass("Enter your GitHub password: ")
+
+
+get_credentials()
 valid = False
 
 while valid == False:
@@ -15,6 +26,4 @@ while valid == False:
         valid = True
     except Exception as e:
         print(e)
-        repoName = input("Enter new GitHub repository name: ")
-        username = input("Enter your GitHub username: ")
-        password = getpass.getpass("Enter your GitHub password: ")
+        get_credentials()
