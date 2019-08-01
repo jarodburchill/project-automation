@@ -2,8 +2,7 @@ set projectName="test"
 set localPath="L:/Projects/"
 
 cd /D %localPath%
-mkdir %projectName%
-REM npx create-react-app projectName
+npx create-react-app %projectName%
 cd %projectName%
 git init
 
