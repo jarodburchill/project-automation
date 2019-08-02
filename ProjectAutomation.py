@@ -116,5 +116,5 @@ print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
 
 
 # starts dev server for react projects
-if projectType == 'react':
+if projectType == 'react' or projectType == 'react-ts':
     subprocess.run("npm start", shell=True)
