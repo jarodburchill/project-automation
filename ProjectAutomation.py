@@ -35,12 +35,9 @@ def GetCredentials():  # gets user input to update GitHub credentials
     password = getpass.getpass("Enter your GitHub password: ")
 
 
-projectProcess = GetProjectProcess(projectType)
-
-
-while projectProcess == "invalid":
+while GetProjectProcess(projectType) == "invalid":
     print("Invalid project type, please try again.")
-    projectProcess = GetProjectProcess(input("Project type: "))
+    projectType = input("Project type: ")
 
 
 GetCredentials()
@@ -58,7 +55,7 @@ while valid == False:  # creates repo if credentials are valid, requests user to
 
 
 os.chdir(localPath)
-subprocess.run(projectProcess, shell=True)
+subprocess.run(GetProjectProcess(projectType), shell=True)
 os.chdir(projectName)
 
 
