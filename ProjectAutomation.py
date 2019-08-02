@@ -3,6 +3,7 @@ import subprocess
 import getpass
 from github import Github
 
+
 # installs GitHub module
 subprocess.run("pip install PyGithub", shell=True)
 
@@ -35,6 +36,7 @@ password = ""
 def GetProjectProcess(projectType):
     switcher = {
         'react': f"npx create-react-app {projectName}",
+        'react-ts': f"npx create-react-app {projectName} --typescript",
         'blank': f"mkdir {projectName}"
     }
     return switcher.get(projectType, "invalid")
