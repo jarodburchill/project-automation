@@ -1,14 +1,16 @@
-import sys
 import os
 import subprocess
 import getpass
 from github import Github
 
+
 subprocess.run("pip install PyGithub", shell=True)
+
 
 # global project variables
 localPath = "L:/Projects/"
 projectName = input("Project name: ")
+projectType = input("Project type: ")
 
 
 # global GitHub credentials
@@ -17,7 +19,14 @@ username = ""
 password = ""
 
 
-def get_credentials():  # gets user input to update GitHub credentials
+def GetProjectProcess(projectType):
+    switcher = {
+        'react': f"npx create-react-app {projectName}"
+    }
+    return switcher.get(projectType, "invalid")
+
+
+def GetCredentials():  # gets user input to update GitHub credentials
     global repoName
     global username
     global password
@@ -26,7 +35,15 @@ def get_credentials():  # gets user input to update GitHub credentials
     password = getpass.getpass("Enter your GitHub password: ")
 
 
-get_credentials()
+projectProcess = GetProjectProcess(projectType)
+
+
+while projectProcess == "invalid":
+    print("Invalid project type, please try again.")
+    projectProcess = GetProjectProcess(input("Project type: "))
+
+
+GetCredentials()
 valid = False
 
 
@@ -37,15 +54,15 @@ while valid == False:  # creates repo if credentials are valid, requests user to
         valid = True
     except Exception as e:
         print(e)
-        get_credentials()
+        GetCredentials()
 
 
 os.chdir(localPath)
-subprocess.run(f"npx create-react-app {projectName}", shell=True)
-# os.mkdir(projectName)
+subprocess.run(projectProcess, shell=True)
 os.chdir(projectName)
 
 
+# git proccesses
 subprocess.run("git init", shell=True)
 subprocess.run("git add *", shell=True)
 subprocess.run("git commit -m 'initial commit'", shell=True)
