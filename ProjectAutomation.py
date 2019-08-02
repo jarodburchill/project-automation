@@ -92,6 +92,7 @@ subprocess.run("git push origin master", shell=True)
 
 # opens project in VS code
 subprocess.run("code .", shell=True)
+print(bcolors.OKGREEN + "Project succesfully created!" + bcolors.ENDC)
 
 
 # starts dev server for react projects
