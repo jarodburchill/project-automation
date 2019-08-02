@@ -44,7 +44,8 @@ def React():
 
 
 def ReactTS():
-    subprocess.run(f"npx create-react-app {projectName}", shell=True)
+    subprocess.run(
+        f"npx create-react-app {projectName} --typescript", shell=True)
 
 
 types = {
