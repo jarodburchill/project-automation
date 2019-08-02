@@ -32,14 +32,31 @@ username = ""
 password = ""
 
 
-# switches the proccess to run based on the type of project
-def GetProjectProcess(projectType):
-    switcher = {
-        'react': f"npx create-react-app {projectName}",
-        'react-ts': f"npx create-react-app {projectName} --typescript",
-        'blank': f"mkdir {projectName}"
-    }
-    return switcher.get(projectType, "invalid")
+def Blank():
+    os.mkdir(projectName)
+    os.chdir(projectName)
+    os.mkdir("img")
+    os.chdir('..')
+
+
+def React():
+    subprocess.run(f"npx create-react-app {projectName}", shell=True)
+
+
+def ReactTS():
+    subprocess.run(f"npx create-react-app {projectName}", shell=True)
+
+
+types = {
+    'blank': Blank,
+    'react': React,
+    'react-ts': ReactTS
+}
+
+
+# runs the proccess to run based on the type of project
+def RunProjectProcess(projectType):
+    types[projectType]()
 
 
 # gets user input to update GitHub credentials
@@ -65,7 +82,7 @@ def CreateGitHubRepo():
 
 
 # loops until project type is valid
-while GetProjectProcess(projectType) == "invalid":
+while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
     projectType = input("Project type: ")
 
@@ -78,7 +95,7 @@ while CreateGitHubRepo() == False:
 
 # changes into correct directory and runs the project proccess for the declared project type
 os.chdir(localPath)
-subprocess.run(GetProjectProcess(projectType), shell=True)
+RunProjectProcess(projectType)
 os.chdir(projectName)
 
 
