@@ -133,7 +133,8 @@ subprocess.run("git push -u origin master", shell=True)
 
 
 # opens project in VS code
-subprocess.run("code .", shell=True)
+if config.get("DEFAULT", "vscode") == "on":
+    subprocess.run("code .", shell=True)
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
 
 
