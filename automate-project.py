@@ -96,7 +96,7 @@ def CreateGitHubRepo():
 # loops until project type is valid
 while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
-    print(bcolors.OKGREEN + "Valid project types: " + bcolors.ENDC)
+    print("Valid project types: ")
     for key, value in types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
