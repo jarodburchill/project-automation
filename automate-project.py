@@ -5,7 +5,7 @@ import configparser
 from github import Github
 
 
-# Makes the ANSI colors work on Windows for some strange reason
+# Makes the ANSI colors work on Windows (known Python bug)
 subprocess.run("", shell=True)
 
 
@@ -87,14 +87,16 @@ def CreateGitHubRepo():
         user.create_repo(repoName)
         return True
     except Exception as e:
+        print(bcolors.FAIL)
         print(e)
+        print(bcolors.ENDC)
         return False
 
 
 # loops until project type is valid
 while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
-    print(bcolors.OKGREEN + "Valid project types:" + bcolors.ENDC)
+    print(bcolors.OKGREEN + "Valid project types: " + bcolors.ENDC)
     for key, value in types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
