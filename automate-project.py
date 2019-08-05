@@ -5,10 +5,6 @@ import configparser
 from github import Github
 
 
-# installs GitHub module
-subprocess.run("pip install PyGithub", shell=True)
-
-
 # common console colors
 class bcolors:
     HEADER = '\033[95m'
@@ -35,23 +31,24 @@ projectType = input("Project type: ")
 # global GitHub credentials
 repoName = ""
 username = config.get("DEFAULT", "username")
-password = ""
+password = config.get("DEFAULT", "password")
 
 
 def Blank():
     os.mkdir(projectName)
     os.chdir(projectName)
-    os.mkdir("img")
-    os.chdir('..')
+    subprocess.run(f"echo # {repoName} >> README.md", shell=True)
 
 
 def React():
     subprocess.run(f"npx create-react-app {projectName}", shell=True)
+    os.chdir(projectName)
 
 
 def ReactTS():
     subprocess.run(
         f"npx create-react-app {projectName} --typescript", shell=True)
+    os.chdir(projectName)
 
 
 types = {
@@ -74,7 +71,8 @@ def GetCredentials():
     repoName = input("Enter new GitHub repository name: ")
     if (username == ''):
         username = input("Enter your GitHub username: ")
-    password = getpass.getpass("Enter your GitHub password: ")
+    if (username == '' or password == ''):
+        password = getpass.getpass("Enter your GitHub password: ")
 
 
 # creates GitHub repo if credentials are valid
@@ -92,6 +90,9 @@ def CreateGitHubRepo():
 # loops until project type is valid
 while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
+    print("Valid project types:")
+    for key, value in types.items():
+        print(key)
     projectType = input("Project type: ")
 
 
@@ -104,17 +105,16 @@ while CreateGitHubRepo() == False:
 # changes into correct directory and runs the project proccess for the declared project type
 os.chdir(localPath)
 RunProjectProcess(projectType)
-os.chdir(projectName)
 
 
 # git proccesses
 subprocess.run("git init", shell=True)
 subprocess.run("git add *", shell=True)
-subprocess.run("git commit -m 'initial commit'", shell=True)
+subprocess.run("git commit -m \"initial commit\"", shell=True)
 subprocess.run(
     f"git remote add origin https://github.com/{username}/{repoName}",
     shell=True)
-subprocess.run("git push origin master", shell=True)
+subprocess.run("git push -u origin master", shell=True)
 
 
 # opens project in VS code
