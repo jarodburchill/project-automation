@@ -1,4 +1,3 @@
-import sys
 import os
 import subprocess
 import getpass
@@ -6,11 +5,11 @@ import configparser
 from github import Github
 
 
-# Makes the ANSI colors work for some strange reason
+# Makes the ANSI colors work on Windows for some strange reason
 subprocess.run("", shell=True)
 
 
-# common console colors
+# common ANSI console colors
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -94,12 +93,10 @@ def CreateGitHubRepo():
 
 # loops until project type is valid
 while projectType not in types:
-    sys.stdout.write(bcolors.WARNING)
-    print("Invalid project type, please try again.")
-    print("Valid project types:")
+    print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
+    print(bcolors.OKGREEN + "Valid project types:" + bcolors.ENDC)
     for key, value in types.items():
-        print(key)
-    sys.stdout.write(bcolors.ENDC)
+        print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
 
 
