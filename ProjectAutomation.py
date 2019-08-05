@@ -34,7 +34,7 @@ projectType = input("Project type: ")
 
 # global GitHub credentials
 repoName = ""
-username = ""
+username = config.get("DEFAULT", "username")
 password = ""
 
 
@@ -72,7 +72,8 @@ def GetCredentials():
     global username
     global password
     repoName = input("Enter new GitHub repository name: ")
-    username = input("Enter your GitHub username: ")
+    if (username == ''):
+        username = input("Enter your GitHub username: ")
     password = getpass.getpass("Enter your GitHub password: ")
 
 
