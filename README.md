@@ -7,12 +7,12 @@ Python script for creating new projects in the desired local directory, with a G
 - Visual Studio Code (optional)
 ## Installation:
 ### Windows:
-Clone repository:
+Clone the repository:
 ```
 cd C:
 git clone https://github.com/jarodburchill/ProjectAutomation
 ```
-Set environment variable:
+Set the environment variable:
 ```
 setx path "%path%;C:\ProjectAutomation\windows"
 ```
