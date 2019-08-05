@@ -1,6 +1,7 @@
 import os
 import subprocess
 import getpass
+import configparser
 from github import Github
 
 
@@ -20,8 +21,13 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 
+# config parser set up
+config = configparser.ConfigParser()
+config.read("script.config")
+
+
 # global project variables
-localPath = "L:/Projects/"
+localPath = config.get("DEFAULT", "localPath")
 projectName = input("Project name: ")
 projectType = input("Project type: ")
 
