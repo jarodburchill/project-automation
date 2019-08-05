@@ -77,20 +77,25 @@ def GetCredentials():
     global username
     global password
     repoName = input("Enter new GitHub repository name: ")
-    if (username == ''):
+    if (username == ""):
         username = input("Enter your GitHub username: ")
-    if (username == '' or password == ''):
+    if (username == "" or password == ""):
         password = getpass.getpass("Enter your GitHub password: ")
 
 
 # creates GitHub repo if credentials are valid
 def CreateGitHubRepo():
+    global repoName
+    global username
+    global password
     GetCredentials()
     try:
         user = Github(username, password).get_user()
         user.create_repo(repoName)
         return True
     except Exception as e:
+        username = ""
+        password = ""
         print(bcolors.FAIL)
         print(e)
         print(bcolors.ENDC)
