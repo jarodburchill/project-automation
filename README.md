@@ -16,7 +16,7 @@ Set the environment variable:
 ```
 setx path "%path%;C:\ProjectAutomation\windows"
 ```
-In command prompt:
+Run in command prompt:
 ```
 new-project
 ```
