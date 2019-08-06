@@ -45,14 +45,21 @@ The password option is blank by default. If a correct GitHub password is entered
 password =
 ```
 ## Usage:
-Run in terminal:
+### Run in terminal:
 ```
 new-project
 ```
-Project Types:
+### Project Types:
+Blank repository with a README:
 ```
 blank
+```
+Create-react-app:
+```
 react
+```
+Create-react-app with TypeScript:
+```
 react-ts
 ```
 ## What I Learned:
