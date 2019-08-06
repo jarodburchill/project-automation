@@ -38,7 +38,8 @@ The localPath option takes a file path string to determine where new local repos
 localPath = C:/Projects/
 
 # Mac and Linux users change local path
-localPath = ~/Projects/
+# Change $USER to your machines username
+localPath = /home/$USER/Projects/
 ```
 The vscode option takes an on or off string to determine if new projects will be opened in VS Code after creation. 
 ```
