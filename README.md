@@ -25,7 +25,7 @@ Set the environment variable:
 ```
 PATH=$PATH:~/ProjectAutomation/mac-linux
 ```
-Make and executable
+Make executable
 ```
 cd ~/ProjectAutomation/mac-linux
 chmod +x new-project
