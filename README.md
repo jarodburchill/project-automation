@@ -23,8 +23,7 @@ new-project
 ### Mac/Linux:
 Clone the repository:
 ```
-cd C:\
-git clone https://github.com/jarodburchill/ProjectAutomation
+TODO
 ```
 Set the environment variable:
 ```
