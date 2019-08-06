@@ -16,10 +16,6 @@ Set the environment variable:
 ```
 setx path "%path%;C:\ProjectAutomation\windows"
 ```
-Run in command prompt:
-```
-new-project
-```
 ### Mac/Linux:
 Clone the repository:
 ```
@@ -28,10 +24,6 @@ TODO
 Set the environment variable:
 ```
 TODO
-```
-Run in terminal:
-```
-new-project
 ```
 ## Configuration:
 All configuration options can be found in the script.config file.
@@ -51,6 +43,17 @@ username =
 The password option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not promt the user to enter a password on each run. 
 ```
 password =
+```
+## Usage:
+Run in terminal:
+```
+new-project
+```
+Project Types:
+```
+blank
+react
+react-ts
 ```
 ## What I Learned:
 - Python language basics
