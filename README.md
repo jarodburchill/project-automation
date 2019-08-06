@@ -45,7 +45,7 @@ The password option is blank by default. If a correct GitHub password is entered
 password =
 ```
 ## Usage:
-### Run in terminal:
+### Run in Terminal:
 ```
 new-project
 ```
