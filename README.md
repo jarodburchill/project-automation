@@ -19,11 +19,16 @@ setx path "%path%;C:\ProjectAutomation\windows"
 ### Mac/Linux:
 Clone the repository:
 ```
-TODO
+git clone https://github.com/jarodburchill/ProjectAutomation
 ```
 Set the environment variable:
 ```
-TODO
+PATH=$PATH:~/ProjectAutomation/mac-linux
+```
+Make and executable
+```
+cd ~/ProjectAutomation/mac-linux
+chmod +x new-project
 ```
 ## Configuration:
 All configuration options can be found in the script.config file.
@@ -31,6 +36,9 @@ All configuration options can be found in the script.config file.
 The localPath option takes a file path string to determine where new local repositories will be created.
 ```
 localPath = C:/Projects/
+
+# Mac and Linux users change local path
+localPath = ~/Projects/
 ```
 The vscode option takes an on or off string to determine if new projects will be opened in VS Code after creation. 
 ```
