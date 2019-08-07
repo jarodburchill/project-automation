@@ -45,7 +45,8 @@ localPath = /home/$USER/Projects/
 > $USER = your machine's username.  
 
 The editor option takes a string to determine what editor new projects will be opened in after creation. 
-NOTE: currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.
+Currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.
+#### NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!
 ```
 editor = <editor>
 ```
@@ -78,5 +79,6 @@ react-ts
 ## Contributors:
 <a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
 <a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>
+<a href="https://github.com/rexogamer"><img src="https://avatars.githubusercontent.com/u/42586271?v=3" title="rexogamer" width="80" height="80"></a>
 ## License:
 MIT © [Jarod Burchill](http://burchilldevelopment.com)
