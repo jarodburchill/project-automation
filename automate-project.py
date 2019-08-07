@@ -136,7 +136,9 @@ subprocess.run("git push -u origin master", shell=True)
 if config.get("DEFAULT", "editor") == "vscode":
     subprocess.run("code .", shell=True)
 elif config.get("DEFAULT", "editor" == "atom":
-    subprocess.run("atom .", shell=True
+    subprocess.run("atom .", shell=True)
+elif config.get("DEFAULT", "editor" == "none":
+    print("No editor selected.")
 else
     print(bcolors.WARNING + "Editor unknown. Please consult config.script."
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
