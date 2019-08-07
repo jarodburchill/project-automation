@@ -36,11 +36,13 @@ All configuration options can be found in the script.config file.
 The localPath option takes a file path string to determine where new local repositories will be created.
 ```
 localPath = C:/Projects/
-
-# Mac and Linux users change local path
-# Change $USER to your machines username
+```
+Mac and Linux users change local path
+```
 localPath = /home/$USER/Projects/
 ```
+> $USER = your machines username  
+
 The vscode option takes an on or off string to determine if new projects will be opened in VS Code after creation. 
 ```
 vscode = on
@@ -71,7 +73,7 @@ Create-react-app with TypeScript:
 ```
 react-ts
 ```
-## What I Learned:
-- Python language basics
-- Using dictionaries in Python
-- Working with the GitHub API
+## Contributors:
+<a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
+<a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>
+## License:
