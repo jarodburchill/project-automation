@@ -44,9 +44,10 @@ localPath = /home/$USER/Projects/
 ```
 > $USER = your machine's username.  
 
-The vscode option takes an on or off string to determine if new projects will be opened in VS Code after creation. 
+The editor option takes a string to determine what editor new projects will be opened in after creation. 
+NOTE: currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.
 ```
-vscode = on
+editor = <editor>
 ```
 The username option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
 ```
