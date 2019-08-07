@@ -132,10 +132,15 @@ subprocess.run(
 subprocess.run("git push -u origin master", shell=True)
 
 
-# opens project in VS code
-if config.get("DEFAULT", "vscode") == "on":
+# opens project in editor
+if config.get("DEFAULT", "editor") == "vscode":
     subprocess.run("code .", shell=True)
+elif config.get("DEFAULT", "editor" == "atom":
+    subprocess.run("atom .", shell=True
+else
+    print(bcolors.WARNING + "Editor unknown. Please consult config.script."
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
+
 
 
 # starts dev server for react projects
