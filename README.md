@@ -77,3 +77,4 @@ react-ts
 <a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
 <a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>
 ## License:
+MIT © [Jarod Burchill](http://burchilldevelopment.com)
