@@ -19,6 +19,7 @@ setx path "%path%;C:\ProjectAutomation\windows"
 ### Mac/Linux:
 Clone the repository:
 ```
+cd ~
 git clone https://github.com/jarodburchill/ProjectAutomation
 ```
 Set the environment variable:
@@ -41,7 +42,7 @@ Mac and Linux users must change local path:
 ```
 localPath = /home/$USER/Projects/
 ```
-> $USER = your machines username  
+> $USER = your machine's username.  
 
 The vscode option takes an on or off string to determine if new projects will be opened in VS Code after creation. 
 ```
