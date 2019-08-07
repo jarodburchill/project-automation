@@ -25,19 +25,19 @@ Set the environment variable:
 ```
 PATH=$PATH:~/ProjectAutomation/mac-linux
 ```
-Make executable
+Make executable:
 ```
 cd ~/ProjectAutomation/mac-linux
 chmod +x new-project
 ```
 ## Configuration:
-All configuration options can be found in the script.config file.
+All configuration options can be found in the `script.config` file.
 ### Options and Defaults:
 The localPath option takes a file path string to determine where new local repositories will be created.
 ```
 localPath = C:/Projects/
 ```
-Mac and Linux users change local path
+Mac and Linux users must change local path:
 ```
 localPath = /home/$USER/Projects/
 ```
