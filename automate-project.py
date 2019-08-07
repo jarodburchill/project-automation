@@ -42,7 +42,7 @@ password = config.get("DEFAULT", "password")
 def Blank():
     os.mkdir(projectName)
     os.chdir(projectName)
-    subprocess.run(f"echo # {repoName} >> README.md", shell=True)
+    subprocess.run(f"echo {repoName} >> README.md", shell=True)
 
 
 # process for react projects
@@ -124,7 +124,7 @@ RunProjectProcess(projectType)
 
 # git proccesses
 subprocess.run("git init", shell=True)
-subprocess.run("git add *", shell=True)
+subprocess.run("git add .", shell=True)
 subprocess.run("git commit -m \"initial commit\"", shell=True)
 subprocess.run(
     f"git remote add origin https://github.com/{username}/{repoName}",
