@@ -34,7 +34,7 @@ chmod +x new-project
 ## Configuration:
 All configuration options can be found in the `script.config` file.
 ### Options and Defaults:
-The localPath option takes a file path string to determine where new local repositories will be created.
+The `localPath` option takes a file path string to determine where new local repositories will be created.
 ```
 localPath = C:/Projects/
 ```
@@ -44,7 +44,7 @@ localPath = /home/$USER/Projects/
 ```
 #### $USER = your machine's username.  
 -----------------------------
-The editor option takes a string to determine what editor new projects will be opened in after creation.
+The `editor` option takes a string to determine what editor new projects will be opened in after creation.
 ```
 editor = <editor>
 ```
@@ -58,12 +58,12 @@ none
 ```
 #### NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!
 -----------------------------
-The username option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
+The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
 ```
 username =
 ```
 -----------------------------
-The password option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not promt the user to enter a password on each run. 
+The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not promt the user to enter a password on each run. 
 ```
 password =
 ```
