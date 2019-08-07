@@ -4,7 +4,7 @@ Python script for creating new projects in the desired local directory, with a G
 - Python 3.x
 - Git
 - npm
-- Visual Studio Code (recommended)
+- Visual Studio Code or Atom (recommended)
 ## Installation:
 ### Windows:
 Clone the repository:
@@ -42,13 +42,14 @@ Mac and Linux users must change local path:
 ```
 localPath = /home/$USER/Projects/
 ```
-> $USER = your machine's username.  
+> **$USER = your machine's username.**  
 
-The editor option takes a string to determine what editor new projects will be opened in after creation. 
-Currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.
-#### NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!
+The editor option takes a string to determine what editor new projects will be opened in after creation. Currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.
+> **NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!**
 ```
-editor = <editor>
+editor = vscode
+editor = atom
+editor = none
 ```
 The username option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
 ```
