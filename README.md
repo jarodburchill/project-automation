@@ -1,7 +1,7 @@
 # ProjectAutomation
 Python script for creating new projects in the desired local directory, with a GitHub origin.
 ## Requirements:
-- Python 3.x
+- Python 3.6+
 - Git
 - npm
 - Visual Studio Code or Atom (recommended)
@@ -38,25 +38,25 @@ The `localPath` option takes a file path string to determine where new local rep
 ```
 localPath = C:/Projects/
 ```
-Mac and Linux users must change local path:
+Linux users must change local path:
 ```
 localPath = /home/$USER/Projects/
 ```
-#### $USER = your machine's username.  
+Mac users must change local path:
+```
+localPath = /Users/$USER/Projects/
+```
+
+#### $USER = your machine's username. MUST CHANGE  
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
 ```
 editor = <editor>
 ```
-Currently, only Atom and VScode are supported. Set to `none` if you don't wish to open the repo in an editor.  
-  
-Editor types: 
-``` 
-vscode  
-atom 
-none
-```
-#### NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!
+Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
+
+#### See editors.md for a list of editors.
+
 -----------------------------
 The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
 ```

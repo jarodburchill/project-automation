@@ -133,17 +133,16 @@ subprocess.run("git push -u origin master", shell=True)
 
 
 # opens project in editor
-if config.get("DEFAULT", "editor") == "vscode":
-    subprocess.run("code .", shell=True)
-elif config.get("DEFAULT", "editor" == "atom":
-    subprocess.run("atom .", shell=True)
-elif config.get("DEFAULT", "editor" == "none":
-    print("No editor selected.")
-else
-    print(bcolors.WARNING + "Editor unknown. Please consult config.script."
+editor = config.get("DEFAULT", "editor")
+
+if editor is not "none":
+    try:
+        subprocess.run(f"{editor} .", shell=True)
+    except Exception as e:
+        print(bcolors.FAIL + "No editor found: ERROR: " + bcolors.ENDC + e)
+else:
+    print(bcolors.WARNING + "No editor selected." + bcolors.ENDC)
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
-
-
 
 # starts dev server for react projects
 if projectType == 'react' or projectType == 'react-ts':
