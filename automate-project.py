@@ -77,7 +77,7 @@ def GetCredentials():
     global repoName
     global username
     global password
-    repoName = input("Enter new GitHub repository name: ")
+    repoName = input("Enter a name for the GitHub repository: ")
     if (username == ""):
         username = input("Enter your GitHub username: ")
     if (username == "" or password == ""):
@@ -105,11 +105,11 @@ def CreateGitHubRepo():
 
 # loops until there is a valid file path
 if not os.path.isdir(localPath):
-    print(bcolors.FAIL + "Invalid string for the localPath option in script.config, please make sure " +
+    print(bcolors.FAIL + "Invalid string for the localPath option in script.config; please make sure " +
           "the localPath in script.config exists to stop seeing this message in the future." + bcolors.ENDC)
     localPath = input("Enter valid local path: ")
     while not os.path.isdir(localPath):
-        print(bcolors.WARNING + "Invalid local path, please try again." + bcolors.ENDC)
+        print(bcolors.WARNING + "Invalid local path; please try again." + bcolors.ENDC)
         localPath = input("Enter valid local path: ")
 
 
@@ -121,7 +121,7 @@ projectName = input("Project name: ")
 print(localPath + "\\" + projectName)
 while os.path.isdir(localPath + "\\" + projectName):
     print(bcolors.WARNING +
-          "Project name already exists, please try again." + bcolors.ENDC)
+          "Project name already exists; please try again." + bcolors.ENDC)
     projectName = input("Project name: ")
 
 
@@ -131,7 +131,7 @@ projectType = input("Project type: ")
 
 # loops until project type is valid
 while projectType not in types:
-    print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
+    print(bcolors.WARNING + "Invalid project type; please try again." + bcolors.ENDC)
     print("Valid project types: ")
     for key, value in types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)

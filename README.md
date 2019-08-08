@@ -40,11 +40,11 @@ Default path for Windows users, change as required:
 ```
 localPath = C:/Projects/
 ```
-Linux users must change local path:
+Linux users must change the local path:
 ```
 localPath = /home/$USER/Projects/
 ```
-Mac users must change local path:
+Mac users must change the local path:
 ```
 localPath = /Users/$USER/Projects/
 ```
@@ -57,12 +57,12 @@ editor = <editor>
 Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
 #### See EDITORS.md for a list of editors.
 -----------------------------
-The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
+The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt the user to enter a username on each run. 
 ```
 username =
 ```
 -----------------------------
-The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not promt the user to enter a password on each run. 
+The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not prompt the user to enter a password on each run. 
 ```
 password =
 ```
