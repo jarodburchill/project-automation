@@ -28,8 +28,9 @@ config.read("script.config")
 
 # global project variables
 localPath = config.get("DEFAULT", "localPath")
-projectName = input("Project name: ")
-projectType = input("Project type: ")
+projectName = ""
+projectType = ""
+editor = config.get("DEFAULT", "editor")
 
 
 # global GitHub credentials
@@ -102,6 +103,32 @@ def CreateGitHubRepo():
         return False
 
 
+# loops until there is a valid file path
+if not os.path.isdir(localPath):
+    print(bcolors.FAIL + "Invalid string for the localPath option in script.config, please make sure " +
+          "the localPath in script.config exists to stop seeing this message in the future." + bcolors.ENDC)
+    localPath = input("Enter valid local path: ")
+    while not os.path.isdir(localPath):
+        print(bcolors.WARNING + "Invalid local path, please try again." + bcolors.ENDC)
+        localPath = input("Enter valid local path: ")
+
+
+# requests user for project name
+projectName = input("Project name: ")
+
+
+# loops until there is a valid project name
+print(localPath + "\\" + projectName)
+while os.path.isdir(localPath + "\\" + projectName):
+    print(bcolors.WARNING +
+          "Project name already exists, please try again." + bcolors.ENDC)
+    projectName = input("Project name: ")
+
+
+# requests user for project type
+projectType = input("Project type: ")
+
+
 # loops until project type is valid
 while projectType not in types:
     print(bcolors.WARNING + "Invalid project type, please try again." + bcolors.ENDC)
@@ -133,7 +160,6 @@ subprocess.run("git push -u origin master", shell=True)
 
 
 # opens project in editor
-editor = config.get("DEFAULT", "editor")
 if editor is not "none":
     try:
         subprocess.run(f"{editor} .", shell=True)
