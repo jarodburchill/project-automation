@@ -134,12 +134,11 @@ subprocess.run("git push -u origin master", shell=True)
 
 # opens project in editor
 editor = config.get("DEFAULT", "editor")
-
 if editor is not "none":
     try:
         subprocess.run(f"{editor} .", shell=True)
     except Exception as e:
-        print(bcolors.FAIL + "No editor found: ERROR: " + bcolors.ENDC + e)
+        print(bcolors.FAIL + "No editor found: " + bcolors.ENDC + e)
 else:
     print(bcolors.WARNING + "No editor selected." + bcolors.ENDC)
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
