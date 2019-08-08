@@ -48,18 +48,10 @@ The `editor` option takes a string to determine what editor new projects will be
 ```
 editor = <editor>
 ```
-Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.  
-  
-Editor types: 
-``` 
-vscode 
-vim
-emacs 
-atom 
-etc...
-none
-```
-#### NOTE: If using Atom, open it, select "Atom" and choose "Install Script Commands" before running the script, or Atom will not open!
+Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
+
+#### See editors.md for a list of editors.
+
 -----------------------------
 The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not promt the user to enter a username on each run. 
 ```

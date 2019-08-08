@@ -141,7 +141,7 @@ if editor is not "none":
     except Exception as e:
         print(bcolors.FAIL + "No editor found: ERROR: " + bcolors.ENDC + e)
 else:
-    print(bcolors.WARNING + "No editor selected" + bcolors.ENDC)
+    print(bcolors.WARNING + "No editor selected." + bcolors.ENDC)
 print(bcolors.OKGREEN + "Project created succesfully!" + bcolors.ENDC)
 
 # starts dev server for react projects
