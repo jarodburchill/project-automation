@@ -6,7 +6,7 @@ Contact us [on Discord.](https://discord.gg/gSmZUSm)
 - Python 3.6+
 - Git
 - npm
-- A Text Editor (i.e. VS Code, Atom, etc.)
+- A text editor (i.e. VS Code, Atom, etc.)
 ## Installation:
 ### Windows:
 Clone the repository:
