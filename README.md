@@ -38,10 +38,15 @@ The `localPath` option takes a file path string to determine where new local rep
 ```
 localPath = C:/Projects/
 ```
-Mac and Linux users must change local path:
+Linux users must change local path:
 ```
 localPath = /home/$USER/Projects/
 ```
+Mac users must change local path:
+```
+localPath = /Users/$USER/Projects/
+```
+
 #### $USER = your machine's username. MUST CHANGE  
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
