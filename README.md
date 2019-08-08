@@ -35,6 +35,7 @@ chmod +x new-project
 All configuration options can be found in the `script.config` file.
 ### Options and Defaults:
 The `localPath` option takes a file path string to determine where new local repositories will be created.  
+  
 Default path for Windows users, change as required:
 ```
 localPath = C:/Projects/
