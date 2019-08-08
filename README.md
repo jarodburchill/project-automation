@@ -1,5 +1,6 @@
 # ProjectAutomation
-Python script for creating new projects in the desired local directory, with a GitHub origin.
+Python script for creating new projects in the desired local directory, with a GitHub origin.  
+  
 Contact us [on Discord.](https://discord.gg/gSmZUSm)
 ## Requirements:
 - Python 3.6+
