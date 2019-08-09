@@ -2,10 +2,11 @@ import os
 import subprocess
 import getpass
 import configparser
+import project_types
 from github import Github
 
 
-# Makes the ANSI colors work on Windows (known Python bug)
+# makes the ANSI colors work on Windows (known Python bug)
 subprocess.run("", shell=True)
 
 
@@ -39,37 +40,10 @@ username = config.get("DEFAULT", "username")
 password = config.get("DEFAULT", "password")
 
 
-# proccess for blank projects
-def Blank():
-    os.mkdir(projectName)
-    os.chdir(projectName)
-    subprocess.run(f"echo {repoName} >> README.md", shell=True)
-
-
-# process for react projects
-def React():
-    subprocess.run(f"npx create-react-app {projectName}", shell=True)
-    os.chdir(projectName)
-
-
-# process for react typescript projects
-def ReactTS():
-    subprocess.run(
-        f"npx create-react-app {projectName} --typescript", shell=True)
-    os.chdir(projectName)
-
-
-# project types dict with values for correct process function
-types = {
-    'blank': Blank,
-    'react': React,
-    'react-ts': ReactTS
-}
-
-
 # runs the proccess to run based on the type of project
 def RunProjectProcess(projectType):
-    types[projectType]()
+    project_types.Init(projectName, repoName)
+    project_types.types[projectType]()
 
 
 # gets user input to update GitHub credentials
@@ -118,7 +92,6 @@ projectName = input("Project name: ")
 
 
 # loops until there is a valid project name
-print(localPath + "\\" + projectName)
 while os.path.isdir(localPath + "\\" + projectName):
     print(bcolors.WARNING +
           "Project name already exists; please try again." + bcolors.ENDC)
@@ -130,10 +103,10 @@ projectType = input("Project type: ")
 
 
 # loops until project type is valid
-while projectType not in types:
+while projectType not in project_types.types:
     print(bcolors.WARNING + "Invalid project type; please try again." + bcolors.ENDC)
     print("Valid project types: ")
-    for key, value in types.items():
+    for key, value in project_types.types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
 
