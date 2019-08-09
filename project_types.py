@@ -35,9 +35,16 @@ def ReactTS():
     os.chdir(projectName)
 
 
+# process for nodejs projects
+def Node():
+    Blank()
+    subprocess.run(f"npm init", shell=True)
+
+
 # project types dict with values for correct process function
 types = {
     'blank': Blank,
     'react': React,
-    'react-ts': ReactTS
+    'react-ts': ReactTS,
+    'node': Node
 }
