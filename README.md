@@ -86,6 +86,10 @@ Create-react-app with TypeScript:
 ```
 react-ts
 ```
+Node.js project:
+```
+node
+```
 ## Contributors:
 <a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
 <a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>
