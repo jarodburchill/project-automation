@@ -1,30 +1,38 @@
 import os
 import subprocess
-import automate_project
 
 
-# init automate_project module for variable use
-script = automate_project
+# global variables
+projectName = ""
+repoName = ""
+
+
+# gets variables from main script
+def Init(project, repo):
+    global projectName
+    global repoName
+    projectName = project
+    repoName = repo
 
 
 # proccess for blank projects
 def Blank():
-    os.mkdir(script.projectName)
-    os.chdir(script.projectName)
-    subprocess.run(f"echo {script.repoName} >> README.md", shell=True)
+    os.mkdir(projectName)
+    os.chdir(projectName)
+    subprocess.run(f"echo {repoName} >> README.md", shell=True)
 
 
 # process for react projects
 def React():
-    subprocess.run(f"npx create-react-app {script.projectName}", shell=True)
-    os.chdir(script.projectName)
+    subprocess.run(f"npx create-react-app {projectName}", shell=True)
+    os.chdir(projectName)
 
 
 # process for react typescript projects
 def ReactTS():
     subprocess.run(
-        f"npx create-react-app {script.projectName} --typescript", shell=True)
-    os.chdir(script.projectName)
+        f"npx create-react-app {projectName} --typescript", shell=True)
+    os.chdir(projectName)
 
 
 # project types dict with values for correct process function

@@ -6,11 +6,6 @@ import project_types
 from github import Github
 
 
-# import project-types module
-types = project_types.types
-
-print(types)
-
 # makes the ANSI colors work on Windows (known Python bug)
 subprocess.run("", shell=True)
 
@@ -47,7 +42,8 @@ password = config.get("DEFAULT", "password")
 
 # runs the proccess to run based on the type of project
 def RunProjectProcess(projectType):
-    types[projectType]()
+    project_types.Init(projectName, repoName)
+    project_types.types[projectType]()
 
 
 # gets user input to update GitHub credentials
@@ -96,7 +92,6 @@ projectName = input("Project name: ")
 
 
 # loops until there is a valid project name
-print(localPath + "\\" + projectName)
 while os.path.isdir(localPath + "\\" + projectName):
     print(bcolors.WARNING +
           "Project name already exists; please try again." + bcolors.ENDC)
@@ -108,10 +103,10 @@ projectType = input("Project type: ")
 
 
 # loops until project type is valid
-while projectType not in types:
+while projectType not in project_types.types:
     print(bcolors.WARNING + "Invalid project type; please try again." + bcolors.ENDC)
     print("Valid project types: ")
-    for key, value in types.items():
+    for key, value in project_types.types.items():
         print(bcolors.OKBLUE + key + bcolors.ENDC)
     projectType = input("Project type: ")
 
