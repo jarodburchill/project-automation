@@ -41,12 +41,13 @@ def Node():
     subprocess.run("npm init", shell=True)
 
 
+# process for expressjs projects
 def Express():
     Node()
     subprocess.run("npm install express --save", shell=True)
 
 
-# process for react projects
+# process for laravel projects
 def Laravel():
     subprocess.run(f"laravel new {projectName}", shell=True)
     os.chdir(projectName)
