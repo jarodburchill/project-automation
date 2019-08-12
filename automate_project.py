@@ -4,10 +4,11 @@ import getpass
 import configparser
 import project_types
 from github import Github
+from colorama import init
 
 
-# makes the ANSI colors work on Windows (known Python bug)
-subprocess.run("", shell=True)
+# makes the ANSI colors work on Windows
+init()
 
 
 # common ANSI console colors
