@@ -50,7 +50,7 @@ Mac users must change the local path:
 ```
 localPath = /Users/$USER/Projects/
 ```
-#### $USER = your machine's username. MUST CHANGE  
+#### $USER = your machine's username. YOU MUST CHANGE THIS!  
 -----------------------------
 The `editor` option takes a string to determine what editor new projects will be opened in after creation.
 ```
@@ -59,15 +59,16 @@ editor = <editor>
 Any editor that is installed on your local machine is supported (provided it has a command line command to open). Set to `none` if you don't wish to open the repo in an editor.
 #### See EDITORS.md for a list of editors.
 -----------------------------
-The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt the user to enter a username on each run. 
+The `username` option is blank by default. If a correct GitHub username is entered into this option, the script will not prompt you to enter a username on each run.  
 ```
-username =
+username = <username>
 ```
 -----------------------------
-The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not prompt the user to enter a password on each run. 
+The `password` option is blank by default. If a correct GitHub password is entered into this option and the username option has also been provided, the script will not prompt you to enter a password on each run.  
 ```
-password =
+password = <password>
 ```
+
 ## Usage:
 ### Run in Terminal:
 ```
@@ -102,5 +103,6 @@ laravel
 <a href="https://github.com/jarodburchill"><img src="https://avatars.githubusercontent.com/u/37840393?v=3" title="jarodburchill" width="80" height="80"></a>
 <a href="https://github.com/ajnieset"><img src="https://avatars.githubusercontent.com/u/40476295?v=3" title="ajnieset" width="80" height="80"></a>
 <a href="https://github.com/rexogamer"><img src="https://avatars.githubusercontent.com/u/42586271?v=3" title="rexogamer" width="80" height="80"></a>
+<a href="https://github.com/misterwhopper"><img src="https://avatars.githubusercontent.com/u/25962309?v=3" title="misterwhopper" width="80" height="80"></a>
 ## License:
 MIT © [Jarod Burchill](http://burchilldevelopment.com)
