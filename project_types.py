@@ -66,6 +66,7 @@ types = {
     'react': React,
     'react-ts': ReactTS,
     'node': Node,
+    'python': Python
     'express': Express,
     'laravel': Laravel
 }
