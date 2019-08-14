@@ -1,5 +1,6 @@
 import os
 import subprocess
+from colorama import Fore
 
 
 # global variables
@@ -24,13 +25,14 @@ def Blank():
 
 # process for react projects
 def React():
-    subprocess.run(f"npx create-react-app {projectName}", shell=True)
+    subprocess.check_call(
+        f"npx create-react-app {projectName}", shell=True)
     os.chdir(projectName)
 
 
 # process for react typescript projects
 def ReactTS():
-    subprocess.run(
+    subprocess.check_call(
         f"npx create-react-app {projectName} --typescript", shell=True)
     os.chdir(projectName)
 

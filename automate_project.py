@@ -107,32 +107,33 @@ while CreateGitHubRepo() == False:
           "Something went wrong when creating the GitHub repo. See above for more details." + Fore.WHITE)
 
 
-# changes into correct directory and runs the project proccess for the declared project type
-os.chdir(localPath)
-RunProjectProcess(projectType)
+try:
+    # changes into correct directory and runs the project proccess for the declared project type
+    os.chdir(localPath)
+    RunProjectProcess(projectType)
 
+    # git proccesses
+    subprocess.run("git init", shell=True)
+    subprocess.run("git add .", shell=True)
+    subprocess.run("git commit -m \"initial commit\"", shell=True)
+    subprocess.run(
+        f"git remote add origin https://github.com/{username}/{repoName}",
+        shell=True)
+    subprocess.run("git push -u origin master", shell=True)
 
-# git proccesses
-subprocess.run("git init", shell=True)
-subprocess.run("git add .", shell=True)
-subprocess.run("git commit -m \"initial commit\"", shell=True)
-subprocess.run(
-    f"git remote add origin https://github.com/{username}/{repoName}",
-    shell=True)
-subprocess.run("git push -u origin master", shell=True)
+    # opens project in editor
+    if editor is not "none":
+        try:
+            subprocess.run(f"{editor} .", shell=True)
+        except Exception as e:
+            print(Fore.RED + "No editor found: " + Fore.WHITE + e)
+    else:
+        print(Fore.YELLOW + "No editor selected." + Fore.WHITE)
+    print(Fore.GREEN + "Project created succesfully!" + Fore.WHITE)
 
-
-# opens project in editor
-if editor is not "none":
-    try:
-        subprocess.run(f"{editor} .", shell=True)
-    except Exception as e:
-        print(Fore.RED + "No editor found: " + Fore.WHITE + e)
-else:
-    print(Fore.YELLOW + "No editor selected." + Fore.WHITE)
-print(Fore.GREEN + "Project created succesfully!" + Fore.WHITE)
-
-
-# starts dev server for react projects
-if projectType == 'react' or projectType == 'react-ts':
-    subprocess.run("npm start", shell=True)
+    # starts dev server for react projects
+    if projectType == 'react' or projectType == 'react-ts':
+        subprocess.run("npm start", shell=True)
+except Exception:
+    print(Fore.RED + "There was an error when creating the project. " +
+          "See above for more details." + Fore.WHITE)
