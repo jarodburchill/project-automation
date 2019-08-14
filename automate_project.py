@@ -67,6 +67,18 @@ def CreateGitHubRepo():
         return False
 
 
+def DeleteGitHubRepo():
+    global repoName
+    global username
+    global password
+    try:
+        user = Github(username, password)
+        repo = user.get_repo(username + "/" + repoName)
+        repo.delete()
+    except Exception:
+        print(f"{Fore.RED}Could not delete new repository \'{repoName}\'. Please delete it online. {Fore.WHITE}")
+
+
 # loops until there is a valid file path
 if not os.path.isdir(localPath):
     print(Fore.RED + "Invalid string for the localPath option in script.config; please make sure " +
@@ -137,3 +149,4 @@ try:
 except Exception:
     print(Fore.RED + "There was an error when creating the project. " +
           "See above for more details." + Fore.WHITE)
+    DeleteGitHubRepo()
