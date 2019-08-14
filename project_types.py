@@ -19,7 +19,7 @@ def Init(project, repo):
 def Blank():
     os.mkdir(projectName)
     os.chdir(projectName)
-    subprocess.run(f"echo {repoName} >> README.md", shell=True)
+    subprocess.check_call(f"echo {repoName} >> README.md", shell=True)
 
 
 # process for react projects
@@ -39,18 +39,18 @@ def ReactTS():
 # process for nodejs projects
 def Node():
     Blank()
-    subprocess.run("npm init", shell=True)
+    subprocess.check_call("npm init", shell=True)
 
 
 # process for expressjs projects
 def Express():
     Node()
-    subprocess.run("npm install express --save", shell=True)
+    subprocess.check_call("npm install express --save", shell=True)
 
 
 # process for laravel projects
 def Laravel():
-    subprocess.run(f"laravel new {projectName}", shell=True)
+    subprocess.check_call(f"laravel new {projectName}", shell=True)
     os.chdir(projectName)
 
 
