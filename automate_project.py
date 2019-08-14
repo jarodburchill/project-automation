@@ -9,6 +9,7 @@ from colorama import init, Fore
 
 # makes colorama work on Windows
 init()
+print(Fore.WHITE)
 
 
 # config parser set up
@@ -62,17 +63,17 @@ def CreateGitHubRepo():
         password = ""
         print(Fore.RED)
         print(e)
-        print(Fore.RESET)
+        print(Fore.WHITE)
         return False
 
 
 # loops until there is a valid file path
 if not os.path.isdir(localPath):
     print(Fore.RED + "Invalid string for the localPath option in script.config; please make sure " +
-          "the localPath in script.config exists to stop seeing this message in the future." + Fore.RESET)
+          "the localPath in script.config exists to stop seeing this message in the future." + Fore.WHITE)
     localPath = input("Enter valid local path: ")
     while not os.path.isdir(localPath):
-        print(Fore.YELLOW + "Invalid local path; please try again." + Fore.RESET)
+        print(Fore.YELLOW + "Invalid local path; please try again." + Fore.WHITE)
         localPath = input("Enter valid local path: ")
 
 
@@ -83,7 +84,7 @@ projectName = input("Project name: ")
 # loops until there is a valid project name
 while os.path.isdir(localPath + "\\" + projectName):
     print(Fore.YELLOW +
-          "Project name already exists; please try again." + Fore.RESET)
+          "Project name already exists; please try again." + Fore.WHITE)
     projectName = input("Project name: ")
 
 
@@ -93,17 +94,17 @@ projectType = input("Project type: ")
 
 # loops until project type is valid
 while projectType not in project_types.types:
-    print(Fore.YELLOW + "Invalid project type; please try again." + Fore.RESET)
+    print(Fore.YELLOW + "Invalid project type; please try again." + Fore.WHITE)
     print("Valid project types: ")
     for key, value in project_types.types.items():
-        print(Fore.BLUE + key + Fore.RESET)
+        print(Fore.BLUE + key + Fore.WHITE)
     projectType = input("Project type: ")
 
 
 # loops until GitHub repo has been created successfully
 while CreateGitHubRepo() == False:
     print(Fore.YELLOW +
-          "Something went wrong when creating the GitHub repo. See above for more details." + Fore.RESET)
+          "Something went wrong when creating the GitHub repo. See above for more details." + Fore.WHITE)
 
 
 # changes into correct directory and runs the project proccess for the declared project type
@@ -126,10 +127,10 @@ if editor is not "none":
     try:
         subprocess.run(f"{editor} .", shell=True)
     except Exception as e:
-        print(Fore.RED + "No editor found: " + Fore.RESET + e)
+        print(Fore.RED + "No editor found: " + Fore.WHITE + e)
 else:
-    print(Fore.YELLOW + "No editor selected." + Fore.RESET)
-print(Fore.GREEN + "Project created succesfully!" + Fore.RESET)
+    print(Fore.YELLOW + "No editor selected." + Fore.WHITE)
+print(Fore.GREEN + "Project created succesfully!" + Fore.WHITE)
 
 
 # starts dev server for react projects
