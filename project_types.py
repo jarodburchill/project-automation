@@ -19,20 +19,20 @@ def Init(project, repo):
 def Blank():
     os.mkdir(projectName)
     os.chdir(projectName)
-    subprocess.check_call(f"echo {repoName} >> README.md", shell=True)
+    subprocess.check_call("echo {} >> README.md".format(repoName), shell=True)
 
 
 # process for react projects
 def React():
     subprocess.check_call(
-        f"npx create-react-app {projectName}", shell=True)
+        "npx create-react-app {}".format(projectName), shell=True)
     os.chdir(projectName)
 
 
 # process for react typescript projects
 def ReactTS():
     subprocess.check_call(
-        f"npx create-react-app {projectName} --typescript", shell=True)
+        "npx create-react-app {} --typescript".format(projectName), shell=True)
     os.chdir(projectName)
 
 
@@ -50,7 +50,7 @@ def Express():
 
 # process for laravel projects
 def Laravel():
-    subprocess.check_call(f"laravel new {projectName}", shell=True)
+    subprocess.check_call("laravel new {}".format(projectName), shell=True)
     os.chdir(projectName)
 
 

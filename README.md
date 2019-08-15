@@ -3,7 +3,7 @@ Python script for creating new projects in the desired local directory, with a G
   
 Contact us [on Discord.](https://discord.gg/eqWstJu)
 ## Requirements:
-- Python 3.6+
+- Python 3.4+
 - Git
 - npm
 - A text editor (i.e. VS Code, Atom, etc.)
