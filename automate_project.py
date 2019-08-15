@@ -76,7 +76,7 @@ def DeleteGitHubRepo():
         repo = user.get_repo(username + "/" + repoName)
         repo.delete()
     except Exception:
-        print(f"{Fore.RED}Could not delete new repository \'{repoName}\'. Please delete it online. {Fore.WHITE}")
+        print("{}Could not delete new repository \'{}\'. Please delete it online.{}".format(Fore.RED, repoName, Fore.WHITE))
 
 
 # loops until there is a valid file path
@@ -125,18 +125,18 @@ try:
     RunProjectProcess(projectType)
 
     # git proccesses
-    subprocess.run("git init", shell=True)
-    subprocess.run("git add .", shell=True)
-    subprocess.run("git commit -m \"initial commit\"", shell=True)
-    subprocess.run(
-        f"git remote add origin https://github.com/{username}/{repoName}",
+    subprocess.call("git init", shell=True)
+    subprocess.call("git add .", shell=True)
+    subprocess.call("git commit -m \"initial commit\"", shell=True)
+    subprocess.call(
+        "git remote add origin https://github.com/{}/{}".format(username, repoName),
         shell=True)
-    subprocess.run("git push -u origin master", shell=True)
+    subprocess.call("git push -u origin master", shell=True)
 
     # opens project in editor
     if editor is not "none":
         try:
-            subprocess.run(f"{editor} .", shell=True)
+            subprocess.call("{} .".format(editor), shell=True)
         except Exception as e:
             print(Fore.RED + "No editor found: " + Fore.WHITE + e)
     else:
@@ -145,8 +145,9 @@ try:
 
     # starts dev server for react projects
     if projectType == 'react' or projectType == 'react-ts':
-        subprocess.run("npm start", shell=True)
-except Exception:
+        subprocess.call("npm start", shell=True)
+except Exception as e:
+    print(e)
     print(Fore.RED + "There was an error when creating the project. " +
           "See above for more details." + Fore.WHITE)
     DeleteGitHubRepo()
