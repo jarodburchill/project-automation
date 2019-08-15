@@ -61,9 +61,7 @@ def CreateGitHubRepo():
     except Exception as e:
         username = ""
         password = ""
-        print(Fore.RED)
-        print(e)
-        print(Fore.WHITE)
+        print(Fore.RED + str(e) + Fore.WHITE)
         return False
 
 
@@ -73,7 +71,7 @@ def DeleteGitHubRepo():
     global password
     try:
         user = Github(username, password)
-        repo = user.get_repo(username + "/" + repoName)
+        repo = user.get_repo("{}/{}".format(username, repoName))
         repo.delete()
     except Exception:
         print("{}Could not delete new repository \'{}\'. Please delete it online.{}".format(Fore.RED, repoName, Fore.WHITE))
@@ -81,11 +79,11 @@ def DeleteGitHubRepo():
 
 # loops until there is a valid file path
 if not os.path.isdir(localPath):
-    print(Fore.RED + "Invalid string for the localPath option in script.config; please make sure " +
-          "the localPath in script.config exists to stop seeing this message in the future." + Fore.WHITE)
+    print("{}Invalid string for the localPath option in script.config; please make sure " +
+          "the localPath in script.config exists to stop seeing this message in the future.{}".format(Fore.RED, Fore.WHITE))
     localPath = input("Enter valid local path: ")
     while not os.path.isdir(localPath):
-        print(Fore.YELLOW + "Invalid local path; please try again." + Fore.WHITE)
+        print("{}Invalid local path; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
         localPath = input("Enter valid local path: ")
 
 
@@ -95,8 +93,7 @@ projectName = input("Project name: ")
 
 # loops until there is a valid project name
 while os.path.isdir(localPath + "\\" + projectName):
-    print(Fore.YELLOW +
-          "Project name already exists; please try again." + Fore.WHITE)
+    print("{}Project name already exists; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
     projectName = input("Project name: ")
 
 
@@ -106,7 +103,7 @@ projectType = input("Project type: ")
 
 # loops until project type is valid
 while projectType not in project_types.types:
-    print(Fore.YELLOW + "Invalid project type; please try again." + Fore.WHITE)
+    print("{}Invalid project type; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
     print("Valid project types: ")
     for key, value in project_types.types.items():
         print(Fore.BLUE + key + Fore.WHITE)
@@ -115,8 +112,7 @@ while projectType not in project_types.types:
 
 # loops until GitHub repo has been created successfully
 while CreateGitHubRepo() == False:
-    print(Fore.YELLOW +
-          "Something went wrong when creating the GitHub repo. See above for more details." + Fore.WHITE)
+    print("{}Something went wrong when creating the GitHub repo. See above for more details.{}".format(Fore.YELLOW, Fore.WHITE))
 
 
 try:
@@ -128,8 +124,7 @@ try:
     subprocess.call("git init", shell=True)
     subprocess.call("git add .", shell=True)
     subprocess.call("git commit -m \"initial commit\"", shell=True)
-    subprocess.call(
-        "git remote add origin https://github.com/{}/{}".format(username, repoName),
+    subprocess.call("git remote add origin https://github.com/{}/{}".format(username, repoName),
         shell=True)
     subprocess.call("git push -u origin master", shell=True)
 
@@ -138,16 +133,14 @@ try:
         try:
             subprocess.call("{} .".format(editor), shell=True)
         except Exception as e:
-            print(Fore.RED + "No editor found: " + Fore.WHITE + e)
+            print("{}No editor found:{} {}".format(Fore.RED, Fore.WHITE, str(e)))
     else:
-        print(Fore.YELLOW + "No editor selected." + Fore.WHITE)
-    print(Fore.GREEN + "Project created succesfully!" + Fore.WHITE)
+        print("{}No editor selected.{}".format(Fore.YELLOW, Fore.WHITE))
+    print("{}Project created succesfully!{}".format(Fore.GREEN, Fore.WHITE))
 
     # starts dev server for react projects
     if projectType == 'react' or projectType == 'react-ts':
         subprocess.call("npm start", shell=True)
 except Exception as e:
-    print(e)
-    print(Fore.RED + "There was an error when creating the project. " +
-          "See above for more details." + Fore.WHITE)
+    print("{}There was an error when creating the project:{} {}".format(Fore.RED, Fore.WHITE, str(e)))
     DeleteGitHubRepo()
