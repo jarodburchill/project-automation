@@ -79,8 +79,7 @@ def DeleteGitHubRepo():
 
 # loops until there is a valid file path
 if not os.path.isdir(localPath):
-    print("{}Invalid string for the localPath option in script.config; please make sure " +
-          "the localPath in script.config exists to stop seeing this message in the future.{}".format(Fore.RED, Fore.WHITE))
+    print("{}Invalid string for the localPath option in script.config; please make sure the localPath in script.config exists to stop seeing this message in the future.{}".format(Fore.RED, Fore.WHITE))
     localPath = input("Enter valid local path: ")
     while not os.path.isdir(localPath):
         print("{}Invalid local path; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
