@@ -36,19 +36,19 @@ chmod +x new-project
 ## Configuration:
 All configuration options can be found in the `script.config` file.
 ### Options and Defaults:
-The `localPath` option takes a file path string to determine where new local repositories will be created.  
+The `directory` option takes a file path string to determine where new local repositories will be created.  
   
 Default path for Windows users, change as required:
 ```
-localPath = C:/Projects/
+directory = C:/Projects/
 ```
 Linux users must change the local path:
 ```
-localPath = /home/$USER/Projects/
+directory = /home/$USER/Projects/
 ```
 Mac users must change the local path:
 ```
-localPath = /Users/$USER/Projects/
+directory = /Users/$USER/Projects/
 ```
 #### $USER = your machine's username. YOU MUST CHANGE THIS!  
 -----------------------------

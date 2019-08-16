@@ -18,7 +18,7 @@ config.read("script.config")
 
 
 # global project variables
-localPath = config.get("DEFAULT", "localPath")
+directory = config.get("DEFAULT", "directory")
 projectName = ""
 projectType = ""
 editor = config.get("DEFAULT", "editor")
@@ -78,12 +78,12 @@ def DeleteGitHubRepo():
 
 
 # loops until there is a valid file path
-if not os.path.isdir(localPath):
-    print("{}Invalid string for the localPath option in script.config; please make sure the localPath in script.config exists to stop seeing this message in the future.{}".format(Fore.RED, Fore.WHITE))
-    localPath = input("Enter valid local path: ")
-    while not os.path.isdir(localPath):
+if not os.path.isdir(directory):
+    print("{}Invalid string for the directory option in script.config; please make sure the directory in script.config exists to stop seeing this message in the future.{}".format(Fore.RED, Fore.WHITE))
+    directory = input("Enter valid local path: ")
+    while not os.path.isdir(directory):
         print("{}Invalid local path; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
-        localPath = input("Enter valid local path: ")
+        directory = input("Enter valid local path: ")
 
 
 # requests user for project name
@@ -91,7 +91,7 @@ projectName = input("Project name: ")
 
 
 # loops until there is a valid project name
-while os.path.isdir(localPath + "\\" + projectName):
+while os.path.isdir(directory + "\\" + projectName):
     print("{}Project name already exists; please try again.{}".format(Fore.YELLOW, Fore.WHITE))
     projectName = input("Project name: ")
 
@@ -116,7 +116,7 @@ while CreateGitHubRepo() == False:
 
 try:
     # changes into correct directory and runs the project proccess for the declared project type
-    os.chdir(localPath)
+    os.chdir(directory)
     RunProjectProcess(projectType)
 
     # git proccesses
