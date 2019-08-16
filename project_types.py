@@ -42,6 +42,12 @@ def Node():
     subprocess.check_call("npm init", shell=True)
 
 
+# process for python projects
+def Python():
+    subprocess.check_call(f"putup {projectName}", shell=True
+    subprocess.check_call("python setup.py develop", shell=True
+
+
 # process for expressjs projects
 def Express():
     Node()
@@ -60,6 +66,7 @@ types = {
     'react': React,
     'react-ts': ReactTS,
     'node': Node,
+    'python': Python
     'express': Express,
     'laravel': Laravel
 }
