@@ -73,7 +73,8 @@ def DeleteGitHubRepo():
         user = Github(username, password)
         repo = user.get_repo("{}/{}".format(username, repoName))
         repo.delete()
-    except Exception:
+    except Exception as e:
+        print(str(e))
         print("{}Could not delete new repository \'{}\'. Please delete it online.{}".format(
             Fore.RED, repoName, Fore.WHITE))
 
