@@ -146,7 +146,7 @@ try:
         print("{}No editor selected.{}".format(Fore.YELLOW, Fore.WHITE))
     print("{}Project created succesfully!{}".format(Fore.GREEN, Fore.WHITE))
 
-    # starts dev server for react projects
+    # starts a dev server for certain project thpes
     if projectType == "react" or projectType == "react-ts":
         subprocess.call("npm start", shell=True)
     elif projectType == "laravel":
@@ -155,6 +155,7 @@ try:
     elif projectType == "vue":
         webbrowser.open("http://localhost:8080/")
         subprocess.call("npm run serve", shell=True)
+
 except Exception as e:
     print("{}There was an error when creating the project:{} {}".format(
         Fore.RED, Fore.WHITE, str(e)))
