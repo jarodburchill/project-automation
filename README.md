@@ -9,6 +9,8 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 - A text editor i.e. VS Code, Atom, etc. (Optional but recommended.)
 #### React/Node.js/Express.js
 - npm
+#### Vue
+- Vue CLI
 #### Laravel
 - Laravel
 - Composer
