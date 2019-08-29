@@ -60,6 +60,11 @@ def Laravel():
     os.chdir(projectName)
 
 
+def Vue():
+    subprocess.check_call("vue create {}".format(projectName), shell=True)
+    os.chdir(projectName)
+
+
 # project types dict with values for correct process function
 types = {
     'blank': Blank,
@@ -68,5 +73,6 @@ types = {
     'node': Node,
     'python': Python,
     'express': Express,
-    'laravel': Laravel
+    'laravel': Laravel,
+    'vue': Vue
 }
