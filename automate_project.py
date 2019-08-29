@@ -2,6 +2,7 @@ import os
 import subprocess
 import getpass
 import configparser
+import webbrowser
 import project_types
 from github import Github
 from colorama import init, Fore
@@ -145,9 +146,15 @@ try:
         print("{}No editor selected.{}".format(Fore.YELLOW, Fore.WHITE))
     print("{}Project created succesfully!{}".format(Fore.GREEN, Fore.WHITE))
 
-    # starts dev server for react projects
-    if projectType == 'react' or projectType == 'react-ts':
+    # starts a dev server for certain project thpes
+    if projectType == "react" or projectType == "react-ts":
         subprocess.call("npm start", shell=True)
+    elif projectType == "laravel":
+        webbrowser.open("http://localhost:8000/")
+        subprocess.call("php artisan serve", shell=True)
+    elif projectType == "vue":
+        webbrowser.open("http://localhost:8080/")
+        subprocess.call("npm run serve", shell=True)
 except Exception as e:
     print("{}There was an error when creating the project:{} {}".format(
         Fore.RED, Fore.WHITE, str(e)))
