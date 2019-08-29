@@ -155,7 +155,6 @@ try:
     elif projectType == "vue":
         webbrowser.open("http://localhost:8080/")
         subprocess.call("npm run serve", shell=True)
-
 except Exception as e:
     print("{}There was an error when creating the project:{} {}".format(
         Fore.RED, Fore.WHITE, str(e)))
