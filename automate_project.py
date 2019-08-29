@@ -150,12 +150,11 @@ try:
     if projectType == "react" or projectType == "react-ts":
         subprocess.call("npm start", shell=True)
     elif projectType == "laravel":
-        subprocess.call("php artisan serve", shell=True)
         webbrowser.open("http://localhost:8000/")
+        subprocess.call("php artisan serve", shell=True)
     elif projectType == "vue":
-        subprocess.call("npm run serve", shell=True)
         webbrowser.open("http://localhost:8080/")
-
+        subprocess.call("npm run serve", shell=True)
 except Exception as e:
     print("{}There was an error when creating the project:{} {}".format(
         Fore.RED, Fore.WHITE, str(e)))
