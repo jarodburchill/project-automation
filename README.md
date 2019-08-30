@@ -87,7 +87,7 @@ Blank repository with a README:
 ```
 blank
 ```
-HTML boilerplate that comes CSS and JS ready:
+HTML boilerplate complete with CSS and JS:
 ```
 html
 ```
