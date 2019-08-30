@@ -1,18 +1,22 @@
 import os
 import subprocess
+import shutil
 
 
 # global variables
 projectName = ""
 repoName = ""
+directory = ""
 
 
 # gets variables from main script
-def Init(project, repo):
+def Init(project, repo, dirPath):
     global projectName
     global repoName
+    global directory
     projectName = project
     repoName = repo
+    directory = dirPath
 
 
 # proccess for blank projects
@@ -20,6 +24,15 @@ def Blank():
     os.mkdir(projectName)
     os.chdir(projectName)
     subprocess.check_call("echo {} >> README.md".format(repoName), shell=True)
+
+
+# process for html projects
+def Html():
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    src = "{}\\assets\\html\\".format(scriptPath)
+    dst = "{}\\{}\\".format(directory, projectName)
+    shutil.copytree(src, dst)
+    os.chdir(projectName)
 
 
 # process for react projects
@@ -68,6 +81,7 @@ def Vue():
 # project types dict with values for correct process function
 types = {
     'blank': Blank,
+    'html': Html,
     'react': React,
     'react-ts': ReactTS,
     'node': Node,

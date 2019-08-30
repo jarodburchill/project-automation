@@ -87,6 +87,10 @@ Blank repository with a README:
 ```
 blank
 ```
+HTML boilerplate complete with CSS and JS:
+```
+html
+```
 Create-react-app:
 ```
 react

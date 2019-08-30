@@ -33,7 +33,7 @@ password = config.get("DEFAULT", "password")
 
 # runs the proccess to run based on the type of project
 def RunProjectProcess(projectType):
-    project_types.Init(projectName, repoName)
+    project_types.Init(projectName, repoName, directory)
     project_types.types[projectType]()
 
 
@@ -155,6 +155,8 @@ try:
     elif projectType == "vue":
         webbrowser.open("http://localhost:8080/")
         subprocess.call("npm run serve", shell=True)
+    elif projectType == "html":
+        webbrowser.open("{}\\{}\\index.html".format(directory, projectName))
 except Exception as e:
     print("{}There was an error when creating the project:{} {}".format(
         Fore.RED, Fore.WHITE, str(e)))
