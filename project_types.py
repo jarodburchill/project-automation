@@ -1,6 +1,5 @@
 import os
 import subprocess
-import webbrowser
 import shutil
 
 # global variables
