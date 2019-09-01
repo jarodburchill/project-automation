@@ -57,6 +57,11 @@ def Node():
 
 # process for python projects
 def Python():
+    try:
+        import pyscaffold
+    except ImportError:
+        subprocess.call("pip install pyscaffold", shell=True)
+        
     subprocess.check_call("putup {}".format(projectName), shell=True)
     os.chdir(projectName)
 

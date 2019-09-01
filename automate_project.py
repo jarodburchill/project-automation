@@ -4,8 +4,16 @@ import getpass
 import configparser
 import webbrowser
 import project_types
-from github import Github
-from colorama import init, Fore
+try:
+    from github import Github
+except ImportError:
+    subprocess.call("pip install PyGithub", shell=True)
+    from github import Github
+try:
+    from colorama import init, Fore
+except ImportError:
+    subprocess.call("pip install colorama", shell=True)
+    from colorama import init, Fore
 
 
 # makes colorama work on Windows
