@@ -10,7 +10,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 #### React/Node.js/Express.js
 - npm
 #### Vue
-- Vue CLI
+- Vue CLI ([install guide](https://cli.vuejs.org/guide/installation.html))
 #### Laravel
 - Laravel
 - Composer
