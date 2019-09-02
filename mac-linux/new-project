@@ -1,3 +1,2 @@
 #!/bin/bash
-pip3 install -r ~/ProjectAutomation/requirements.txt
 python3 ~/ProjectAutomation/automate_project.py
