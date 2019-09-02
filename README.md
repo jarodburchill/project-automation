@@ -4,17 +4,17 @@ Python script for creating new projects in the desired local directory, with a G
 Contact us [on Discord.](https://discord.gg/eqWstJu)
 ## Requirements:
 #### Universal
-- Python 3.4+
-- Git
+- [Python 3.4+](https://www.python.org/downloads/)
+- [Git](https://git-scm.com/downloads)
 - A text editor i.e. VS Code, Atom, etc. (Optional but recommended.)
 #### React/Node.js/Express.js
-- npm
+- [npm](https://nodejs.org/)
 #### Vue
-- Vue CLI
+- [Vue CLI](https://cli.vuejs.org/guide/installation.html)
 #### Laravel
-- Laravel
-- Composer
-- PHP
+- [PHP](https://www.php.net/manual/en/install.php)
+- [Composer](https://getcomposer.org/)
+- [Laravel](https://laravel.com/docs/5.8/installation)
 ## Installation:
 ### Windows:
 Clone the repository:
