@@ -6,7 +6,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 #### Universal
 - [Python 3.4+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/downloads)
-- A text editor i.e. VS Code, Atom, etc. (Optional but recommended.)
+- A text editor i.e. [VS Code](https://code.visualstudio.com/), [Atom](https://atom.io/), etc. (Optional but recommended.)
 #### React/Node.js/Express.js
 - [npm](https://nodejs.org/)
 #### Vue
