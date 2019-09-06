@@ -35,6 +35,7 @@ editor = config.get("DEFAULT", "editor")
 
 # global GitHub credentials
 repoName = ""
+private = ""
 username = config.get("DEFAULT", "username")
 password = config.get("DEFAULT", "password")
 
@@ -48,24 +49,39 @@ def RunProjectProcess(projectType):
 # gets user input to update GitHub credentials
 def GetCredentials():
     global repoName
+    global private
     global username
     global password
+
     repoName = input("Enter a name for the GitHub repository: ")
-    if (username == ""):
+    private = input("Private repository (y/n): ")
+
+    while private != False and private != True:
+        if private == "y":
+            private = True
+        elif private == "n":
+            private = False
+        else:
+            print("{}Invalid value.{}".format(Fore.YELLOW, Fore.WHITE))
+            private = input("Private repository (y/n): ")
+        print(private)
+
+    if username == "":
         username = input("Enter your GitHub username: ")
-    if (username == "" or password == ""):
+    if username == "" or password == "":
         password = getpass.getpass("Enter your GitHub password: ")
 
 
 # creates GitHub repo if credentials are valid
 def CreateGitHubRepo():
     global repoName
+    global private
     global username
     global password
     GetCredentials()
     try:
         user = Github(username, password).get_user()
-        user.create_repo(repoName)
+        user.create_repo(repoName, private=private)
         return True
     except Exception as e:
         username = ""
