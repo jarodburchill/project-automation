@@ -64,7 +64,6 @@ def GetCredentials():
         else:
             print("{}Invalid value.{}".format(Fore.YELLOW, Fore.WHITE))
             private = input("Private repository (y/n): ")
-        print(private)
 
     if username == "":
         username = input("Enter your GitHub username: ")
