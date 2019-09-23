@@ -1,4 +1,4 @@
-# ProjectAutomation
+# Project Automation
 Python script for creating new projects in the desired local directory, with a GitHub origin.  
   
 Contact us [on Discord.](https://discord.gg/eqWstJu)
@@ -20,25 +20,25 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 Clone the repository:
 ```
 cd C:\
-git clone https://github.com/jarodburchill/ProjectAutomation
+git clone https://github.com/jarodburchill/project-automation
 ```
 Set the environment variable:
 ```
-setx path "%path%;C:\ProjectAutomation\windows"
+setx path "%path%;C:\project-automation\windows"
 ```
 ### Mac/Linux:
 Clone the repository:
 ```
 cd ~
-git clone https://github.com/jarodburchill/ProjectAutomation
+git clone https://github.com/jarodburchill/project-automation
 ```
 Set the environment variable:
 ```
-PATH=$PATH:~/ProjectAutomation/mac-linux
+PATH=$PATH:~/project-automation/mac-linux
 ```
 Make executable:
 ```
-cd ~/ProjectAutomation/mac-linux
+cd ~/project-automation/mac-linux
 chmod +x new-project
 ```
 ## Configuration:
