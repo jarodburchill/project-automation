@@ -35,9 +35,9 @@ editor = config.get("DEFAULT", "editor")
 
 # global GitHub credentials
 repoName = ""
-private = ""
 username = config.get("DEFAULT", "username")
 password = config.get("DEFAULT", "password")
+private = config.get("DEFAULT", "private")
 
 
 # runs the proccess to run based on the type of project
@@ -53,8 +53,14 @@ def GetCredentials():
     global username
     global password
 
-    repoName = input("Enter a name for the GitHub repository: ")
-    private = input("Private repository (y/n): ")
+    if repoName == "":
+        repoName = input("Enter a name for the GitHub repository: ")
+    if username == "":
+        username = input("Enter your GitHub username: ")
+    if username == "" or password == "":
+        password = getpass.getpass("Enter your GitHub password: ")
+    if private == "":
+        private = input("Private GitHub repository (y/n): ")
 
     while private != False and private != True:
         if private == "y":
@@ -64,11 +70,6 @@ def GetCredentials():
         else:
             print("{}Invalid value.{}".format(Fore.YELLOW, Fore.WHITE))
             private = input("Private repository (y/n): ")
-
-    if username == "":
-        username = input("Enter your GitHub username: ")
-    if username == "" or password == "":
-        password = getpass.getpass("Enter your GitHub password: ")
 
 
 # creates GitHub repo if credentials are valid
@@ -83,8 +84,10 @@ def CreateGitHubRepo():
         user.create_repo(repoName, private=private)
         return True
     except Exception as e:
+        repoName = ""
         username = ""
         password = ""
+        private = ""
         print(Fore.RED + str(e) + Fore.WHITE)
         return False
 
@@ -116,6 +119,7 @@ if not os.path.isdir(directory):
 
 # requests user for project name
 projectName = input("Project name: ")
+repoName = projectName
 
 
 # loops until there is a valid project name
