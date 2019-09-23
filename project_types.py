@@ -33,6 +33,7 @@ def Html():
     dst = "{}\\{}\\".format(directory, projectName)
     shutil.copytree(src, dst)
     os.chdir(projectName)
+    subprocess.check_call("echo {} >> README.md".format(repoName), shell=True)
 
 
 # process for react projects
@@ -61,7 +62,7 @@ def Python():
         import pyscaffold
     except ImportError:
         subprocess.call("pip install pyscaffold", shell=True)
-        
+
     subprocess.check_call("putup {}".format(projectName), shell=True)
     os.chdir(projectName)
 

@@ -55,13 +55,8 @@ def GetCredentials():
 
     if repoName == "":
         repoName = input("Enter a name for the GitHub repository: ")
-    if username == "":
-        username = input("Enter your GitHub username: ")
-    if username == "" or password == "":
-        password = getpass.getpass("Enter your GitHub password: ")
     if private == "":
         private = input("Private GitHub repository (y/n): ")
-
     while private != False and private != True:
         if private == "y":
             private = True
@@ -69,7 +64,11 @@ def GetCredentials():
             private = False
         else:
             print("{}Invalid value.{}".format(Fore.YELLOW, Fore.WHITE))
-            private = input("Private repository (y/n): ")
+            private = input("Private GitHub repository (y/n): ")
+    if username == "":
+        username = input("Enter your GitHub username: ")
+    if username == "" or password == "":
+        password = getpass.getpass("Enter your GitHub password: ")
 
 
 # creates GitHub repo if credentials are valid
