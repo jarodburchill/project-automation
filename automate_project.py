@@ -172,7 +172,7 @@ try:
         print("{}No editor selected.{}".format(Fore.YELLOW, Fore.WHITE))
     print("{}Project created succesfully!{}".format(Fore.GREEN, Fore.WHITE))
 
-    # starts a dev server for certain project thpes
+    # starts a dev server for certain project types
     if projectType == "react" or projectType == "react-ts":
         subprocess.call("npm start", shell=True)
     elif projectType == "laravel":
