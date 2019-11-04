@@ -149,7 +149,7 @@ new-project
 | `express` | Express.js project |
 | `laravel` | Laravel project |
 | `vue` | Vue project |
-| `python` | pyscaffold project |
+| `python` | Pyscaffold project |
 
 #### For lots of python config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
 
