@@ -139,61 +139,19 @@ new-project
 
 ### Project Types:
 
-Blank repository with a README:
+| Type          | Description           |
+| ------------- | --------------------- |
+| `blank` | Blank repository with a README |
+| `html` | HTML boilerplate complete with CSS and JS |
+| `react` | Create-react-app |
+| `react-ts` | Create-react-app with TypeScript |
+| `node` | Node.js project |
+| `express` | Express.js project |
+| `laravel` | Laravel project |
+| `vue` | Vue project |
+| `python` | pyscaffold project |
 
-```
-blank
-```
-
-HTML boilerplate complete with CSS and JS:
-
-```
-html
-```
-
-Create-react-app:
-
-```
-react
-```
-
-Create-react-app with TypeScript:
-
-```
-react-ts
-```
-
-Node.js project:
-
-```
-node
-```
-
-#### For lots of config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
-
-Python project:
-
-```
-python
-```
-
-Express.js project:
-
-```
-express
-```
-
-Laravel project:
-
-```
-laravel
-```
-
-Vue project:
-
-```
-vue
-```
+#### For lots of python config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
 
 ## Contributors:
 
