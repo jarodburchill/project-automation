@@ -12,7 +12,7 @@ Contact us [on Discord.](https://discord.gg/eqWstJu)
 - [Git](https://git-scm.com/downloads)
 - A text editor i.e. [VS Code](https://code.visualstudio.com/), [Atom](https://atom.io/), etc. (Optional but recommended.)
 
-#### React/Node.js/Express.js
+#### React/Electron/Node.js/Express.js
 
 - [npm](https://nodejs.org/)
 
@@ -92,13 +92,14 @@ new-project
 | ------------- | --------------------- |
 | `blank` | Blank repository with a README |
 | `html` | HTML boilerplate complete with CSS and JS |
-| `react` | Create-react-app |
-| `react-ts` | Create-react-app with TypeScript |
+| `react` | create-react-app |
+| `react-ts` | create-react-app with TypeScript |
 | `node` | Node.js project |
 | `express` | Express.js project |
 | `laravel` | Laravel project |
 | `vue` | Vue project |
 | `python` | Pyscaffold project |
+| `electron` | create-electron-app |
 
 #### For lots of python config options, [see the pyscaffold README.](https://github.com/pyscaffold/pyscaffold#configuration--packaging)
 
